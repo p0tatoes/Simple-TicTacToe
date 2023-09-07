@@ -73,6 +73,8 @@ function checkWin(x_turn) {
 
             alert(x_turn ? "X is the winner" : "O is the winner");
             currTurn.style.visibility = "hidden";
+
+            showImageAsset();
             audio_asset.play();
 
             return;
@@ -109,4 +111,13 @@ function setWinnerStyles(indexes) {
         buttons[index].style.backgroundColor = "crimson";
         buttons[index].style.color = "white";
     });
+}
+
+function showImageAsset() {
+    let image_asset = document.getElementById("image_asset");
+    image_asset.style.visibility = "visible";
+    image_asset.style.opacity = 0.2;
+    setInterval(() => {
+        image_asset.style.opacity = 0;
+    }, 400);
 }
