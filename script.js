@@ -66,7 +66,7 @@ function checkWin(x_turn) {
                 button.disabled = true;
             });
 
-            setWinnerStyles(buttons, [first, second, third]);
+            setWinnerStyles([first, second, third]);
 
             alert(x_turn ? "X is the winner" : "O is the winner");
             currTurn.style.visibility = "hidden";
@@ -97,10 +97,9 @@ function checkDraw() {
 /**
  * sets the background color to red and text color to white of the winning line combination
  *
- * @param {*} buttons Array. a list of objects containing information about all buttons in the tic-tac-toe grid.
  * @param {*} indexes Array. a list of integers containing the indexes of the winning line combination.
  */
-function setWinnerStyles(buttons, indexes) {
+function setWinnerStyles(indexes) {
     indexes.forEach((index) => {
         buttons[index].style.backgroundColor = "crimson";
         buttons[index].style.color = "white";
