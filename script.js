@@ -6,6 +6,9 @@ let buttons = document.querySelectorAll("button.item");
 // Display of whose turn it is
 let currTurn = document.getElementById("current-turn");
 
+// Audio asset
+const audio_asset = new Audio("./public/audio_asset.webm");
+
 /**
  * Disables the button after it has been ticked by the player, changes the current turn to the other player's, and changes the current turn display
  *
@@ -70,6 +73,8 @@ function checkWin(x_turn) {
 
             alert(x_turn ? "X is the winner" : "O is the winner");
             currTurn.style.visibility = "hidden";
+            audio_asset.play();
+
             return;
         }
     }
